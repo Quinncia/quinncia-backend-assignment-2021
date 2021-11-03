@@ -38,7 +38,7 @@ router.get('/money-exchange/generate-report-on-payments-and-usage-by-country-and
   let paid = [];
   let pending = [];
   let cancelled = [];
-  for (const i = 0; i < payments.length; ++i) {
+  for (var i = 0; i < payments.length; ++i) {
     const {
       id,
       date,
@@ -60,7 +60,7 @@ router.get('/money-exchange/generate-report-on-payments-and-usage-by-country-and
   }
 
   if (notifyViaEmail) {
-    for (const i = 0; i < payments.length; ++i) {
+    for (var i = 0; i < payments.length; ++i) {
       externalAPI.makeRequest(
         '/v1/send/emails',
         {
